@@ -1,4 +1,4 @@
-var graph = {
+var data = {
 	"graph": [],
 	"nodes":[
 		{"id": "ERR019574","group":0},

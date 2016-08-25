@@ -12,7 +12,36 @@
 </head>
 <body>
 
+  <input type="number" min="0" max="360" step="5" value="0" id="nValue">
+
+
 <script>
+
+d3.select("#nValue").on("input", function() {
+  svg.remove()
+  initData(+this.value);
+  initForce();
+});
+
+
+var graph = {};
+
+function initData(SNPs){
+
+//var SNPs=document.getElementById('input1').value;
+
+  console.log(SNPs);
+  generateGraphJSON(SNPs);
+
+  function generateGraphJSON(SNPs){
+    graph.nodes = data.nodes
+    graph.links = data.links.filter(function(dat){
+      if(dat.value<SNPs){return dat;}
+    });
+  }
+}
+
+function initForce(){
 ///////////// Functions Start /////////////
 
 function isNumber(n) {
@@ -344,6 +373,10 @@ function exit_highlight(){
     .attr("cy", function(d) { return d.y; });
   });
 
+}
+
+initData(0);
+initForce();
 
 
 
