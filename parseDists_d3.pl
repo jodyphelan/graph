@@ -68,7 +68,7 @@ foreach my $sample (@samples) {
 	$num++;
 }
 
-print OUT "var graph = {\n\t\"graph\": [],\n\t\"nodes\":[\n";
+print OUT "var data = {\n\t\"graph\": [],\n\t\"nodes\":[\n";
 print OUT substr($nodeLine,0,length($nodeLine)-2);
 print OUT "],\n\t\"links\":[\n";
 print OUT substr($edgeLine,0,length($edgeLine)-2);
