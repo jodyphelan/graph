@@ -15,8 +15,8 @@
 </head>
 <body>
 
-<div class="row">
-  <div class="col-md-2">
+<div class="row" >
+  <div class="col-md-2" id="menu">
     <p>
       Num SNPs:
       <input type="number" min="0" max="500" step="5" value="0" id="nValue">
@@ -56,6 +56,7 @@ d3.select("#nValue").on("input", function() {
   SNPs = this.value;
   initData(SNPs,Clusters);
   initForce();
+  initHist();
   drawMap();
   drawGraph();
 });
@@ -64,6 +65,7 @@ d3.select("#cValue").on("input", function(){
   Clusters = this.value;
   initData(SNPs,Clusters);
   initForce();
+  initHist();
   drawMap();
   drawGraph();
 })
@@ -82,6 +84,8 @@ d3.select("#cValue").on("input", function(){
   initData(0,0);
   initForce();
   initMap();
+  initHist();
+
   drawMap();
   drawGraph();
 
