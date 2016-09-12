@@ -11,7 +11,15 @@
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css">
   <link rel="stylesheet" href="styles.css">
   <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
-
+  <style>
+    .row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    #graphSvg{
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
 
@@ -96,7 +104,7 @@ d3.select("#colourNodeBtn").on("click", function(){
 
 
 
-  svg = d3.select("#graph").append("svg");
+  svg = d3.select("#graph").append("svg").attr("id","graphSvg");
 // Change the style of the cursor when over svg elements
   svg.style("cursor", "crosshair");
   g = svg.append("g");
